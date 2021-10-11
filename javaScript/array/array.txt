@@ -1,0 +1,8 @@
+metodos de interação :
+	- metodos que precisam de uma callback, pode utilizar arrow function
+	
+	
+1 - arr.forEach() ele trabalha com o nodelist, ele trabalha com os items e não tem um retorno 
+		arr.forEach(
+
+2 - arr.map

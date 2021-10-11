@@ -1,0 +1,7 @@
+.geral {
+  display: grid;
+  grid-gap: 10px;
+}
+.res {
+  text-align: center;
+}

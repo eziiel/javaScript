@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Objetos2</h1>
+  <dt>
+    <dl>Object.creat()
+      <dd>aplica novos paramentros(prototipos) para um objeto ja criado</dd>
+    </dl>
+    <dl>Objeto.assign(alvo, funcaoObjeto, funcaoObjeto2)
+      <dd>é quase como se fosse uma function constructor, mas com objetos já criados. ex linha 29 <br> const novoValor = Object.creat(objetoAserUsado) </dd>
+    </dl>
+    <dl>Object.defineProperties(alvo, propiedades)
+      <dd>
+        com esse comando da para colocar propiedades nos objetos de outro modo, no qual essa propiedade poderá ser imutável, ou mutável caso desejado, pode receber dois argumetos pós definidas as propiedades: precida do value entre chaves, configurable, enumerable, writable <br> ex linha 41 <br> Object.defineProperties(objetoParaColocarAsPropiedades, { <br>
+valor1: { <br>value : 'valorAtribuido', <br>} <br>
+configurable: true, //opcional <br> writable: true//opcional <br>enumerable: true,//opcional <br>})
+      </dd>
+    </dl>
+    <dl>get e set() {propiedades}
+      <dd> é um método de pegar ou passar valores, atribui como o objeto aparece ao ser chamado</dd>
+    </dl>
+  
+  </dt>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

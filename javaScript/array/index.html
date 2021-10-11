@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array</title>
+</head>
+<body>
+<div class="header">
+  <h1>Array</h1>
+  <p>armazena uma coleção de elementos</p>
+  <ul>
+    <li>array</li>
+    <li>function</li>
+    <li>objetos</li>
+    <li>boolean</li>
+  </ul>
+</div>
+<div>
+  <h2>Dois modos de fazer</h2>
+  <ol>
+    <li>direto: const num = [1, 2, 3]</li>
+    <li>indireto: const num = new Array(1,2,3)</li>
+  </ol>
+</div>
+<div class='metodos'>
+  <h2>Metodos de Array</h2>
+  <dt>
+    <dl>Array.from()
+      <dd>metodo para transformar array-like object em array.
+      </dd></dl>
+    <dl>arr.join(parametro)
+        <dd>retorna os valores de um array em string, retornando o parametro como separador, se nao for definido, por padrao retorna vírgula</dd></dl>
+    <dl>arr.reverse()
+        <dd>reverte a ordem da array</dd></dl>
+    <dl>arr.concat()
+        <dd>concatenar arrays</dd></dl>
+    <dl>arr.slice(parametro1, parametro2)
+        <dd>vale o mesmo que para strings, retorna o valor de uma array conforme os parametros passados, podendo ser omitodo o inicio e o final pode receber valor negativo
+          <p>pode usar o slice para clonar uma array: arr.slice()</p>
+        </dd></dl>
+    <dl>arr.splice(parametro1, parametro2, parametro3)
+      <dd>quase igual slice, remove items da array conforme os parametros passados(a partir do parametro1 remove(quantidade)parametro2), a partir do 3 é tudo adcionado</dd></dl>
+    <dl>array.pop() - array.push()
+      <dd>pop remove no final e push adiciona no final, podem ser vazios os parametros, mas pelo menos no push o ideal é colocar um param</dd></dl>
+    <dl>arr.unshift() e arr.shift()
+      <dd>remove ou adiciona no inicio de cada arraypodem ser vazios os parametros, mas pelo menos no push o ideal é colocar um param</dd></dl>
+    <dl>arr.toString()
+      <dd>transforma a array em string</dd>
+    </dl>
+    <dl>arr.copyWithing(alvo, inicio, final)
+      <dd>faz uma copia de determinados elementos da array na propia array</dd>
+    </dl>
+    <dl>arr.fill(parametros, inicio, final)
+      <dd>preenche a array com o parametro passado, o inicio e final podem ser opcional</dd>
+    </dl>
+    <dl>arr.includes(paramentro)
+      <dd>verifica na array se o parametro passado esta na array</dd>
+    </dl>
+    <dl>arr.indexOf(parametro)
+      <dd>retorna a posição do primeiro paramentro no array mesmo tendo mais. ps:começa do 0</dd>
+    </dl>
+    <dl>arr.lastIndexOf(paramentro)</dl>
+    <dd>retorna a posição do primeiro paramentro no array começando do final mesmo tendo mais. ps:começa do 0</dd>
+    <dl>arr.sort()
+      <dd>
+        classifica os items da array, se não colocar parametro fica organizado por ordem alfabetica
+      </dd>
+    </dl>
+  </dt>
+</div>
+<div>
+  <h2>Metodos de Array pelo ecmas5</h2>
+  <p>ECMAScript 5 define nove novos métodos de array para iterar, mapear, filtrar, testar, reduzir e pesquisar arrays.</p>
+  <p>a maioria dos elementos aceita uma funcao como primeiro argumento e chama essa funcao para cada elemento, se o array for esoparso a funcao nao pe passada para elements inexistentes.</p>
+  <p>na maioria dos casos a funcao passada recebe tres parametros, <ins>item</ins>, <ins>indice</ins>, <ins>array</ins></p>
+  <dt>
+    <dl>arr.forEach((item, index, array) function {})
+      <dd>
+        forEach é como loop, interando para cada elemento, pode receber tres parametros, e aplicar uma funcao para cada um, essa funcao pode ser arrow, <ins>o importante no forEach é o que faz com cada elemento e não o retorno de sua inicialização</ins>
+        <p>ps: forEach nao pode ser parado normalmente com o break</p>
+      </dd>
+      <p><b>***PS: Tanto forEach() e MAP(), podem receber arrow function, podem omitir os parenteses() do parametro se for somente um e omitir as chaves se a linha de código for somente uma, e ambas poder recerber uma callback function de fora</b></p>
+      <p><b>****map() pode omitir o <ins>return</ins> se for de uma linha só</b></p>
+    </dl>
+    <dl>arr.map((item, index, array)function {})
+      <dd>se o array for esparso o metodo map() retorna um resultado esparso, é parecida com forEach(), porem a map() retorna um valor, um novo array não modificando assim o que foi chamado, e assim <ins> precisa de um return</ins>
+      <p>map é uma funcao de transformacao</p>
+      </dd>
+    </dl>
+    <dl>arr.filter((item, index, array)function {})
+      <dd>
+        espera uma callback de valor booleando e ele passa pela array retornando todos os items que forem verdadeiros (linha 33)
+      </dd>
+    </dl>
+    <dl>arr.filterIndex((item, index, array)function {})
+      <dd>
+        espera uma callback de valor booleando e ele passa pela array retornando o index que for verdadeiro
+      </dd>
+    </dl>
+    <dl>arr.reduce(callback{}(acumulador, item, index) ,valor inicial)
+      <dd>
+        executa uma funcao de callback para cada item, reduce recebe dois parametros novos, um acumulador que acumula os dados e é retornado, e um valor inicial para o acumulador.
+        <p>o acumulador é o retorno da interação anterior</p>
+      </dd>
+    </dl>
+      <dl>arr.reduceRight()
+        <dd>reduce mas começando da direita</dd>
+      </dl>
+      <dl>arr.some()
+      <dd>
+      - não é pra somar. tem como objetivo retornar um booleano, <b>retorna verdadeiro se tiver pelo menos um verdadeiro, e Falso se todos forem falsos</b>
+        </dd>
+      </dl>
+      <dl>arr.every()
+        <dd>retorna falso se um for false, e só retorna verdadeiro se todos forem verdadeiros
+        </dd>
+      </dl>
+      <dl>arr.find()
+        <dd> ele retorna o primeiro item (valor) verdadeiro (linha 31)
+      </dd>
+      </dl>
+      <dl>arr.findIndex()   
+        <dd>igual o find, porem retorna o index
+        </dd>
+      </dl>
+  </dt>
+
+
+  <dt>
+
+  </dt>
+</div>
+
+
+
+  <!-- <script src="exercicios.js"></script> -->
+  <script src="script.js"></script>
+</body>
+</html>

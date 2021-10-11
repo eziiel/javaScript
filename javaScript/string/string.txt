@@ -1,0 +1,115 @@
+STRING
+	menu:
+		length				busca com[]
+		charAT				igual o length
+		concatenacao de strings		+ ou `${}`
+		endswit - startwit		busca começo ou fim e retorna boolean
+		slice				remove ou retorna conforme selecionado
+		indexOF - LastIndexOf		retona a posicao do primeiro valor encontrado
+		padStart - PadEnd		adiciona string com tamanho
+		str.repeat(n)			repete a string n vezes
+		str.replace(1,2)		troca o 1 pelo 2
+		str.split(padrao)		retorna a string como array separada pelo padrao
+		
+
+dois jeito de fazer:
+o direto:  const carro = 'gol'
+o objeto:  const moto = new String ('biz')
+
+pode-se acessar as propiedades com: String.protoype ou Object.getOwnPropertyNames(String.prototype) 
+
+
+		----str.length - acesso como se fosse array
+carro.length>			mostra o número de letras
+carro[1]>			para acessar uma posicao especific	a
+carro[carro.length-1]>		para acessar a ultima letra
+
+		----str.charAt() - funciona como o length
+carro.charAt()
+carro.charAt(carro.length-1)
+
+		---- juntar strings
+da para fazer somando e com o método doido
+const casa= 'casa'
+const cor = 'azul'
+const corCasa = casa + ' ' + cor
+	>>>>ou - prefiro esse modo
+console.log(`${casa} é ${cor}`)
+
+		----str.endswith(busca) ou str.startwith(busca) - termina com ou comeca com
+carro.endsWith('a') //false
+carro.startsWith('a') //true
+
+		----str.slice(start, end) corta a string de acordo com o selecionado
+			
+const status = 'processando'
+const status2 = 'processamento concluído'
+const status3 = 'confirmado'
+
+console.log(status.slice(1,3) //pro
+console.log(status2.slice(1,3) //pro
+console.log(status3.slice(1,3) //con
+	>>>>obs- pode adicionar o modo de pesquisa length
+console.log(status.slice(1,3)[0]) //r
+	>>>>se omitir o start ele remove o valor selecionado
+console.log(status.slice(2) //ocessando
+	>>>>se colocar omitir o start e colocar negativo começa do final
+console.log(status.slice(-2) //do
+	>>>>se colocar o start e colocar o negativo no end ele exclui conforme selecionado no inicio e fim
+console.log(status.slice(1,-2) //rocessan
+
+		----substring - funciona como o slice, somente o negativo que não, se usado retorna a string completa
+
+		----str.indexOF(busca) retorna o primeiro resultado de busca e para, str.lastIndexOF(busca) faz a busca ao contrario - retorna number
+const status = 'processando'
+status.indexOf('o')//2
+status.lastIndexOf('o')//10
+
+		----str.padStart(n, str) =n o numero que aumenta e str o que colocar, comecar no final str.padEnd(n,str)
+const status = 'processando'
+const load = status.slice(0,-3) //processa
+const loadRes = load.padEnd(13, 'mento') // processamento
+
+		----str.repeat(n) repete a string nx
+const arma = 'ta'
+arma.repeat(4)
+		
+		----str.replace(troca, trocado) - faz uma troca pelo trocado
+faz uma troca no primeiro valor encontrado pelo trocado
+//pode usar uma regular expression = um valor que puxa todos iguais
+// str.replace(/[ ]+/g)
+//ou str.replaceAll()
+
+let animal = 'cachorro'	
+animal.replace('chorro', 'rro')
+
+		----str.split(padrao) retorna a string como array separada pelo padrao
+let animal = 'cachorro'
+animal.split('a') // ['c','chorro']
+
+		----includes - é um meio de busca de string dentro de outras strings
+const letra = 'a'
+const vogais ='a, e, i, o, u'
+console.log(vogais.includes(letra))
+console.log(letra.includes(vogais))
+
+		----str.trim() remove os espacos no inicio e fim -trim.start e trim.end mais especifico
+const casa  = '    grande'
+casa.trim() //'grande'
+
+
+/////////////atalhos do livvro
+var s = "hello, world" 			// Começa com um texto.
+s.charAt(0) 				// => "h": o primeiro caractere.
+s.charAt(s.length-1) 			// => "d": o último caractere.
+s.substring(1,4) 			// => "ell": o 2º, 3º e 4º caracteres.
+s.slice(1,4) 				// => "ell": a mesma coisa
+s.slice(-3) 				// => "rld": os últimos 3 caracteres
+s.indexOf("l") 				// => 2: posição da primeira letra l.
+s.lastIndexOf("l") 			// => 10: posição da última letra l.
+s.indexOf("l", 3) 			// => 3: posição do primeiro "l" em ou após 3
+s.split(", ") 				// => ["hello", "world"] divide em substrings retornando em uma array
+s.replace("h", "H") 			// => "Hello, world": substitui todas as instâncias
+s.toUpperCase() 			// => "HELLO, WORLD"
+
+
